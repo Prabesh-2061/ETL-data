@@ -12,3 +12,4 @@ minio.license
 logs/
 .env
 main.py
+spark-jars/
