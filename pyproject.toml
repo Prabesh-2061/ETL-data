@@ -1,0 +1,14 @@
+[project]
+name = "airflowt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-airflow>=3.2.1",
+    "apache-airflow-providers-apache-spark>=6.0.2",
+    "apache-airflow-providers-postgres>=6.6.3",
+    "numpy>=2.4.5",
+    "psycopg2-binary>=2.9.12",
+    "requests>=2.34.0",
+]
