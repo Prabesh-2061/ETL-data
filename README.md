@@ -5,19 +5,8 @@ A production-style data engineering pipeline that fetches real-time weather data
 ---
 
 ## Architecture
-Open-Meteo API
-│
-▼
-Airflow (raw_weather asset)
-fetches weather hourly for 5 cities
-stores raw JSON → PostgreSQL
-│
-▼
-Spark (spark_to_minio asset)
-reads raw data from PostgreSQL
-parses + cleans JSON payload
-engineers features
-writes parquet → MinIO data lake
+<img width="685" height="652" alt="image" src="https://github.com/user-attachments/assets/c54d5d28-d72a-4f6c-8b5d-cf075482d71b" />
+
 
 ---
 
@@ -66,18 +55,8 @@ Final data is written to MinIO as Parquet files at `s3a://weather-lake/features/
 ---
 
 ## Project Structure
-├── dags/
-│   ├── postgre.py          # Airflow assets (raw_weather + spark_to_minio)
-│   └── weather_etl.py      # PySpark transformation script
-├── spark-jars/             # JAR files (not tracked in git — see setup below)
-├── config/                 # Airflow config
-├── logs/                   # Airflow logs
-├── plugins/                # Airflow plugins
-├── Dockerfile              # Custom Airflow image with Spark installed
-├── docker-compose.yaml     # All services
-├── minio.license           # MinIO AIStor license (not tracked in git)
-├── download-jars.sh        # Script to download required JARs
-└── .env                    # Environment variables (not tracked in git)
+<img width="715" height="325" alt="image" src="https://github.com/user-attachments/assets/3b63fa08-3f7e-4216-917e-4867967b56de" />
+
 
 ---
 
