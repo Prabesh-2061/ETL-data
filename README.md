@@ -240,13 +240,19 @@ Check logs in Airflow UI → click the `spark_to_minio` task → Logs
 Apache License 2.0
 
 ## Screenshots
-# Airflow
+### Airflow
 <img width="1242" height="390" alt="image" src="https://github.com/user-attachments/assets/5ad925c7-5c49-4a31-a0d8-5ed03d0a7228" />
 
 <img width="1836" height="683" alt="image" src="https://github.com/user-attachments/assets/4422d2b4-9160-42ac-bb32-08859c6759f5" />
 
 <img width="1350" height="892" alt="image" src="https://github.com/user-attachments/assets/96b97909-b110-4d44-b045-acb3a873fbb6" />
 
-# Spark
+### Spark
+<img width="952" height="746" alt="image" src="https://github.com/user-attachments/assets/5c9d481a-32c7-4405-8859-783981033e69" />
+
+### Minio Aistor
+<img width="1908" height="375" alt="image" src="https://github.com/user-attachments/assets/b0b66141-8e12-4275-bd9b-cc3860cba005" />
+
+
 
 
