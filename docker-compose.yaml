@@ -412,7 +412,26 @@ services:
       - ./spark-jars/aws-java-sdk-bundle-1.12.262.jar:/opt/spark/jars/aws-java-sdk-bundle-1.12.262.jar
       - ./dags:/opt/spark/dags
 
-   
+  spark-worker-2:
+    image: apache/spark:3.5.1
+    networks:
+      - airflow-spark-net
+    container_name: spark-worker-2
+    command: >
+      /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_WORKER_CORES: "2"
+      SPARK_WORKER_MEMORY: "2g"
+    ports:
+      - "8083:8081"
+    volumes:
+      - ./spark-jars/postgresql.jar:/opt/spark/jars/postgresql.jar
+      - ./spark-jars/hadoop-aws-3.3.4.jar:/opt/spark/jars/hadoop-aws-3.3.4.jar
+      - ./spark-jars/aws-java-sdk-bundle-1.12.262.jar:/opt/spark/jars/aws-java-sdk-bundle-1.12.262.jar
+      - ./dags:/opt/spark/dags
+
   minio:
     image: quay.io/minio/aistor/minio:latest
     networks:
